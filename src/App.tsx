@@ -20,8 +20,8 @@ import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import './index.css';
 
-function AppLayout({ children }) {
-  const { user } = useContext(AuthContext);
+function AppLayout({ children }: { children: React.ReactNode }) {
+  const { user } = useContext(AuthContext) as any;
   return (
     <div className="flex">
       {user && <Navbar />}
