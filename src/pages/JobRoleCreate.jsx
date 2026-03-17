@@ -44,17 +44,17 @@ const JobRoleCreate = () => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen bg-gray-900 text-white p-6 md:p-12 pb-32"
+      className="min-h-screen bg-gray-50 text-gray-900 p-6 md:p-12 pb-32"
     >
-      <div className="max-w-4xl mx-auto bg-gray-800/80 p-10 rounded-[3rem] border border-gray-700 shadow-2xl backdrop-blur-xl">
-        <h1 className="text-4xl font-black mb-10 text-blue-400 uppercase tracking-tighter">Post New Job Role</h1>
+      <div className="max-w-4xl mx-auto bg-white p-10 rounded-3xl border border-orange-100 shadow-[0_8px_40px_-12px_rgba(249,115,22,0.1)]">
+        <h1 className="text-4xl font-black mb-10 text-orange-500 uppercase tracking-tighter">Post New Job Role</h1>
 
         <form onSubmit={handleSubmit} className="space-y-10">
           <div className="space-y-3">
-            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Official Job Title</label>
+            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Official Job Title</label>
             <input
               type="text"
-              className="w-full bg-gray-900 border border-gray-700 p-5 rounded-2xl focus:ring-4 focus:ring-blue-500/20 text-xl font-bold transition-all placeholder:text-gray-700"
+              className="w-full bg-gray-50 border border-orange-200 p-5 rounded-2xl focus:ring-4 focus:ring-orange-500/20 focus:border-orange-400 text-xl font-bold transition-all placeholder:text-gray-300"
               placeholder="e.g. Lead Technical Architect"
               onChange={(e) => setFormData({ ...formData, title: e.target.value })}
               required
@@ -62,9 +62,9 @@ const JobRoleCreate = () => {
           </div>
 
           <div className="space-y-3">
-            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Education & Experience Requirements</label>
+            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Education & Experience Requirements</label>
             <textarea
-              className="w-full bg-gray-900 border border-gray-700 p-5 rounded-2xl focus:ring-4 focus:ring-blue-500/20 h-24 transition-all placeholder:text-gray-700"
+              className="w-full bg-gray-50 border border-orange-200 p-5 rounded-2xl focus:ring-4 focus:ring-orange-500/20 focus:border-orange-400 h-24 transition-all placeholder:text-gray-300"
               placeholder="e.g. B.Tech Computer Science, 3+ years in React.js..."
               onChange={(e) => setFormData({ ...formData, basicRequirements: e.target.value })}
               required
@@ -72,9 +72,9 @@ const JobRoleCreate = () => {
           </div>
 
           <div className="space-y-3">
-            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-500">Detailed Scope of Work</label>
+            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-400">Detailed Scope of Work</label>
             <textarea
-              className="w-full bg-gray-900 border border-gray-700 p-5 rounded-2xl focus:ring-4 focus:ring-blue-500/20 h-40 transition-all placeholder:text-gray-700"
+              className="w-full bg-gray-50 border border-orange-200 p-5 rounded-2xl focus:ring-4 focus:ring-orange-500/20 focus:border-orange-400 h-40 transition-all placeholder:text-gray-300"
               placeholder="Outline the core responsibilities and expectations..."
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               required
@@ -82,17 +82,17 @@ const JobRoleCreate = () => {
           </div>
 
           <div className="space-y-6">
-            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-500 block">Critical Skill Benchmarks (Min 3)</label>
-            <div className="flex flex-col md:flex-row gap-4 bg-gray-900/50 p-6 rounded-3xl border border-gray-700/50">
+            <label className="text-xs font-black uppercase tracking-[0.2em] text-gray-400 block">Critical Skill Benchmarks (Min 3)</label>
+            <div className="flex flex-col md:flex-row gap-4 bg-gray-50 p-6 rounded-3xl border border-orange-100">
               <input
                 type="text"
-                className="flex-1 bg-gray-900 border border-gray-700 p-4 rounded-xl focus:ring-4 focus:ring-blue-500/20"
+                className="flex-1 bg-white border border-orange-200 p-4 rounded-xl focus:ring-4 focus:ring-orange-500/20 focus:border-orange-400"
                 placeholder="Skill Label (e.g. Docker)"
                 value={currentSkill.skillName}
                 onChange={(e) => setCurrentSkill({ ...currentSkill, skillName: e.target.value })}
               />
               <select
-                className="bg-gray-900 border border-gray-700 p-4 rounded-xl focus:ring-4 focus:ring-blue-500/20 font-bold text-sm uppercase tracking-widest cursor-pointer"
+                className="bg-white border border-orange-200 p-4 rounded-xl focus:ring-4 focus:ring-orange-500/20 font-bold text-sm uppercase tracking-widest cursor-pointer text-gray-700"
                 value={currentSkill.skillCategory}
                 onChange={(e) => setCurrentSkill({ ...currentSkill, skillCategory: e.target.value })}
               >
@@ -103,7 +103,7 @@ const JobRoleCreate = () => {
               <button
                 type="button"
                 onClick={addSkill}
-                className="px-10 bg-blue-600 hover:bg-blue-700 rounded-xl font-bold transition-all shadow-xl shadow-blue-900/40 uppercase text-xs tracking-widest"
+                className="px-10 bg-orange-500 hover:bg-orange-600 text-white rounded-xl font-bold transition-all shadow-xl shadow-orange-500/20 uppercase text-xs tracking-widest"
               >
                 Add Skill
               </button>
@@ -117,16 +117,16 @@ const JobRoleCreate = () => {
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.8, opacity: 0 }}
                     key={index}
-                    className="flex items-center gap-3 bg-blue-500/10 text-blue-400 px-5 py-3 rounded-2xl border border-blue-500/20 group shadow-lg"
+                    className="flex items-center gap-3 bg-orange-50 text-orange-600 px-5 py-3 rounded-2xl border border-orange-200 group shadow-sm"
                   >
                     <div>
-                      <span className="font-black uppercase text-xs block leading-none mb-1 text-blue-500/50">{skill.skillCategory}</span>
-                      <span className="font-bold text-lg tracking-tight">{skill.skillName}</span>
+                      <span className="font-black uppercase text-xs block leading-none mb-1 text-orange-400">{skill.skillCategory}</span>
+                      <span className="font-bold text-lg tracking-tight text-gray-800">{skill.skillName}</span>
                     </div>
                     <button
                       type="button"
                       onClick={() => removeSkill(index)}
-                      className="w-8 h-8 rounded-lg bg-red-500/10 text-red-500 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center font-black ml-4"
+                      className="w-8 h-8 rounded-lg bg-red-50 text-red-500 hover:bg-red-500 hover:text-white transition-all flex items-center justify-center font-black ml-4"
                     >
                       ×
                     </button>
@@ -134,7 +134,7 @@ const JobRoleCreate = () => {
                 ))}
               </AnimatePresence>
               {formData.minSkills.length < 3 && (
-                <div className="text-gray-600 text-xs font-black uppercase tracking-widest py-4 bg-gray-900/30 px-6 rounded-2xl italic border border-dashed border-gray-700">
+                <div className="text-gray-400 text-xs font-black uppercase tracking-widest py-4 bg-orange-50/50 px-6 rounded-2xl italic border border-dashed border-orange-200">
                   ⚠️ Minimum 3 skills required to validate assessments ({3 - formData.minSkills.length} remaining)
                 </div>
               )}
@@ -145,7 +145,7 @@ const JobRoleCreate = () => {
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             type="submit"
-            className="w-full py-6 bg-blue-600 hover:bg-blue-700 text-white text-xl font-black rounded-[2rem] transition-all shadow-2xl shadow-blue-900/30 uppercase tracking-[0.2em]"
+            className="w-full py-6 bg-orange-500 hover:bg-orange-600 text-white text-xl font-black rounded-2xl transition-all shadow-2xl shadow-orange-500/20 uppercase tracking-[0.2em]"
           >
             Deploy Job Role
           </motion.button>
